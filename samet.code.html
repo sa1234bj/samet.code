@@ -4,92 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Logic Dijital | Geleceği Kodla</title>
+    <!-- Google Fontları -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007bff; /* Yazılım ve güvenin rengi */
-            --dark-bg: #121212; /* Disiplin ve odaklanma için koyu tema */
-            --text-light: #e0e0e0;
+            --primary: #00d2ff;
+            --accent: #3a7bd5;
+            --bg-dark: #0a0a0b;
+            --card-bg: #161b22;
+            --text-main: #f0f6fc;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             margin: 0;
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
         header {
-            background: linear-gradient(135deg, #1e1e1e, #000);
-            padding: 100px 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
             text-align: center;
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary);
         }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .card {
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--primary-color);
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #30363d;
+            transition: 0.3s;
         }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .status-badge {
-            background: #28a745;
-            color: white;
-            padding: 5px 15px;
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .badge {
+            background: #238636;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
+        .footer { text-align: center; padding: 100px 0; border-top: 1px solid #30363d; }
         .btn {
-            display: inline-block;
-            background: var(--primary-color);
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: opacity 0.2s;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>PRIME LOGIC DIJITAL</h1>
-    <p>11. Sınıf Yazılım Öğrencisi | Girişimci | Geleceği İnşa Ediyor</p>
-    <a href="#iletisim" class="btn">Sistemden Çıkış Yap</a>
+    <h1>PRIME LOGIC</h1>
+    <p style="font-size: 1.2rem; opacity: 0.8;">11. Sınıf Yazılım Öğrencisi • Dijital Girişimci • Teknoloji Üreticisi</p>
+    <div style="margin-top: 30px;">
+        <a href="#projeler" class="btn">Projelerimi Gör</a>
+    </div>
 </header>
 
-<div class="container">
+<div class="container" id="projeler">
     <section>
-        <h2>Hakkımda</h2>
-        <p>Okulun etüt salonunda, kulaklığımda disiplin videoları ve önümde projelerimle yaşıtlarımın ötesinde bir gelecek inşa ediyorum. Sadece kod yazmıyor, sistemin dışına çıkmak için strateji geliştiriyorum.</p>
-    </section>
-
-    <section>
-        <h2>Öne Çıkan Projeler</h2>
-        <div class="card">
-            <h3>Teknofest 2026: Akıllı Scooter Pro <span class="status-badge">Başvuru Tamamlandı</span></h3>
-            <p>Donanım ve yazılımı tamamen bana ait olan, sonuçlarını heyecanla beklediğim inovasyon projem.</p>
+        <h2 style="border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 40px;">Vizyoner Çalışmalar</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">BİTTİ</span>
+                <h3>Akıllı Scooter Pro</h3>
+                <p>Teknofest 2026 için geliştirilen, teknik raporu ve başvurusu tamamlanmış inovatif ulaşım projem.</p>
+            </div>
+            <div class="card">
+                <span class="badge">AKTİF</span>
+                <h3>Prime Logic Dijital</h3>
+                <p>Web tasarım, logo ve kurumsal kimlik hizmetleri sunduğumuz profesyonel dijital ajans girişimi.</p>
+            </div>
+            <div class="card">
+                <span class="badge">TEKNİK</span>
+                <h3>Python & Geliştirme</h3>
+                <p>Arduino ve Python ile geliştirilen donanımsal çözümler ve veri yönetimi algoritmaları.</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>Python & Arduino Sistemleri</h3>
-            <p>Arduino UNO ve HC-SR04 sensörleri kullanarak geliştirdiğim elektronik çözümler ve Python tabanlı algoritmalar.</p>
-        </div>
     </section>
 
-    <section>
-        <h2>Neden Prime Logic?</h2>
-        <ul>
-            <li><strong>Üretim Odaklı:</strong> Başkaları tüketirken, ben grafik ve yazılım derslerimle değer üretiyorum.</li>
-            <li><strong>Disiplin:</strong> Pansiyon hayatının rutinini başarıya dönüştüren bir çalışma prensibi.</li>
-        </ul>
-    </section>
-
-    <section id="iletisim" style="text-align:center; padding: 50px 0;">
-        <h2>Birlikte Fark Yaratalım</h2>
-        <p>E-posta: iletisim@primelogic.pro</p>
-        <p><em>"Senin 'yapamazsın' dediğin şeyi ben zaten yaptım."</em></p>
+    <section style="margin-top: 80px;">
+        <h2>Neden Biz?</h2>
+        <p>Okul pansiyonundaki etüt salonlarında, yaşıtlarım oyun oynarken ben geleceği kodluyorum. Disiplinli çalışma, grafik eğitimindeki estetik bakış açısı ve yazılım bilgimi Prime Logic çatısı altında birleştiriyorum.</p>
     </section>
 </div>
+
+<footer class="footer">
+    <p>Gelecek kodlayanlarındır.</p>
+    <p style="opacity: 0.5;">© 2026 Prime Logic Dijital</p>
+</footer>
 
 </body>
 </html>
