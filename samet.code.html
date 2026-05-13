@@ -3,112 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Logic Dijital | Geleceği Kodla</title>
-    <!-- Google Fontları -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <title>Samet | Yazılım Geliştirici & Girişimci</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00d2ff;
-            --accent: #3a7bd5;
-            --bg-dark: #0a0a0b;
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --bg: #0d1117;
             --card-bg: #161b22;
-            --text-main: #f0f6fc;
+            --text: #e6edf3;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
-        header {
+        .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0d1117 100%);
             text-align: center;
-            border-bottom: 2px solid var(--primary);
+            padding: 0 20px;
         }
-        h1 {
-            font-size: 4rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
             margin: 0;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            font-weight: 800;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
         }
-        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .hero p { font-family: 'Fira Code', monospace; color: #8b949e; margin-top: 10px; }
+        
+        .container { max-width: 1200px; margin: auto; padding: 100px 20px; }
+        
+        .section-title {
+            font-size: 2rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
         .card {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
             border: 1px solid #30363d;
-            transition: 0.3s;
-        }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .badge {
-            background: #238636;
-            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+        }
+        .card h3 { color: var(--primary); margin-top: 0; }
+        .card .status {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #58a6ff;
             font-weight: bold;
         }
-        .footer { text-align: center; padding: 100px 0; border-top: 1px solid #30363d; }
+
+        .about-box {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px dashed #30363d;
+        }
+
         .btn {
-            padding: 12px 30px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: opacity 0.2s;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
         }
+
+        footer { text-align: center; padding: 50px; color: #8b949e; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>PRIME LOGIC</h1>
-    <p style="font-size: 1.2rem; opacity: 0.8;">11. Sınıf Yazılım Öğrencisi • Dijital Girişimci • Teknoloji Üreticisi</p>
-    <div style="margin-top: 30px;">
-        <a href="#projeler" class="btn">Projelerimi Gör</a>
+<section class="hero">
+    <p>// Yazılım Geliştirici</p>
+    <h1>SAMET</h1>
+    <p>11. Sınıf Yazılım Öğrencisi • Teknoloji Üreticisi</p>
+    <div style="margin-top: 40px;">
+        <a href="#projects" class="btn">Çalışmalarımı Gör</a>
     </div>
-</header>
+</section>
 
-<div class="container" id="projeler">
-    <section>
-        <h2 style="border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 40px;">Vizyoner Çalışmalar</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="badge">BİTTİ</span>
-                <h3>Akıllı Scooter Pro</h3>
-                <p>Teknofest 2026 için geliştirilen, teknik raporu ve başvurusu tamamlanmış inovatif ulaşım projem.</p>
-            </div>
-            <div class="card">
-                <span class="badge">AKTİF</span>
-                <h3>Prime Logic Dijital</h3>
-                <p>Web tasarım, logo ve kurumsal kimlik hizmetleri sunduğumuz profesyonel dijital ajans girişimi.</p>
-            </div>
-            <div class="card">
-                <span class="badge">TEKNİK</span>
-                <h3>Python & Geliştirme</h3>
-                <p>Arduino ve Python ile geliştirilen donanımsal çözümler ve veri yönetimi algoritmaları.</p>
-            </div>
+<div class="container" id="projects">
+    <h2 class="section-title">Projeler & Yetkinlikler</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="status">TEKNOFEST 2026</div>
+            <h3>Akıllı Scooter Pro</h3>
+            <p>Yazılım ve donanımı tarafımdan geliştirilen, raporlama süreci tamamlanmış inovasyon projem.</p>
         </div>
-    </section>
 
-    <section style="margin-top: 80px;">
-        <h2>Neden Biz?</h2>
-        <p>Okul pansiyonundaki etüt salonlarında, yaşıtlarım oyun oynarken ben geleceği kodluyorum. Disiplinli çalışma, grafik eğitimindeki estetik bakış açısı ve yazılım bilgimi Prime Logic çatısı altında birleştiriyorum.</p>
-    </section>
+        <div class="card">
+            <div class="status">TASARIM & WEB</div>
+            <h3>Dijital Ajans Çözümleri</h3>
+            <p>Profesyonel logo tasarımı, kurumsal kimlik ve modern web arayüz geliştirme hizmetleri.</p>
+        </div>
+
+        <div class="card">
+            <div class="status">YAZILIM</div>
+            <h3>Python & Arduino</h3>
+            <p>Elektronik sistemler ve Python algoritmaları ile fiziksel dünyayı dijitale taşıyan projeler.</p>
+        </div>
+    </div>
+
+    <div class="about-box" style="margin-top: 100px;">
+        <h2 style="margin-top: 0;">Disiplin ve Üretim</h2>
+        <p>
+            Hafta içi okul pansiyonunda kalarak etüt saatlerimi tamamen yazılım ve teknoloji geliştirmeye ayırıyorum. 
+            Grafik eğitimimi teknik bilgilerimle birleştirerek dijital dünyada somut değerler üretiyorum. 
+            Hedefim, sistemin dışına çıkarak kendi teknolojilerimi inşa etmek.
+        </p>
+    </div>
 </div>
 
-<footer class="footer">
-    <p>Gelecek kodlayanlarındır.</p>
-    <p style="opacity: 0.5;">© 2026 Prime Logic Dijital</p>
+<footer>
+    <p>© 2026 Samet • "Gelecek, onu bugünden kodlayanlarındır."</p>
 </footer>
 
 </body>
